@@ -12,12 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        var config = UVConfig(site:"demo.uservoice.com");
+        UserVoice.initialize(config);
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func launchSDK() {
+        UserVoice.presentUserVoiceInterfaceForParentViewController(self)
     }
 
 
